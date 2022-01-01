@@ -31,7 +31,6 @@ function App() {
         setIsLoading(false);
         setUserDetail(data.results[0]);
         setUsers(data.results);
-        // console.log(data.results);
       } catch (error) {
         setIsLoading(false);
         setIsError(true);
