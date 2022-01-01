@@ -56,7 +56,7 @@ function App() {
           {userDetail && (
             <>
               <div className="px-6">
-                <div className="max-w-3xl mx-auto rounded-md shadow-sm mt-16 h-72 border flex flex-col sm:flex-row items-center">
+                <div className="max-w-2xl mx-auto rounded-lg shadow-md mt-16 h-72 border flex flex-col sm:flex-row items-center">
                   <div className="flex justify-center items-center w-64 mt-4">
                     <img
                       className="w-32 h-32 rounded-full"
@@ -85,7 +85,8 @@ function App() {
                       {userDetail.location.timezone.description}
                     </p>
                     <p className="mt-1 text-sm text-center sm:text-left sm:text-md text-gray-500">
-                      {userDetail.gender}
+                      {userDetail.gender.charAt(0).toUpperCase() +
+                        userDetail.gender.slice(1)}
                     </p>
                   </div>
                 </div>

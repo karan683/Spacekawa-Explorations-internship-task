@@ -13,7 +13,7 @@ const Header = () => {
     <header className="w-full top-0 left-0 p-6 shadow-md">
       <div className="flex justify-between items-center">
         <div className="ml-4 lg:ml-32 text-lg md:text-2xl font-bold">
-          <h1>Your Challenge</h1>
+          <h1 className="cursor-pointer">Your Challenge</h1>
         </div>
         <div className="hidden md:block mr-4 lg:mr-20">
           <ul className="flex">
