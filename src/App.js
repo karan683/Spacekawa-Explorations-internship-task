@@ -56,7 +56,7 @@ function App() {
           {userDetail && (
             <>
               <div className="px-6">
-                <div className="max-w-2xl mx-auto rounded-lg shadow-md mt-16 h-72 border flex flex-col sm:flex-row items-center">
+                <div className="max-w-3xl mx-auto rounded-lg shadow-md mt-16 h-72 border flex flex-col sm:flex-row items-center">
                   <div className="flex justify-center items-center w-64 mt-4">
                     <img
                       className="w-20 h-20 sm:w-32 sm:h-32 rounded-full"
