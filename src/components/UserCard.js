@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 const UserCard = ({ userData, userDetailChangeHandler }) => {
-  // const [bgColor, setBgColor] = useState("");
   const clickHandler = () => {
     userDetailChangeHandler(userData);
-    // setBgColor("bg-purple-500");
   };
   return (
     <div
