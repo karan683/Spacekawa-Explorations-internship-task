@@ -16,7 +16,7 @@ const UserCard = ({ userData, userDetailChangeHandler }) => {
       <h2 className="mb-2 text-xl font-semibold">
         {userData.name.title} {userData.name.first} {userData.name.second}{" "}
       </h2>
-      <h4 className="mb-1">{userData.email}</h4>
+      <h4 className="mb-1 text-red-500">{userData.email}</h4>
     </div>
   );
 };

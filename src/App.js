@@ -3,14 +3,14 @@ import Header from "./components/Header";
 import axios from "axios";
 import LoadingSpinnner from "./components/LoadingSpinner";
 import UserCard from "./components/UserCard";
-import Modal from './components/Modal';
+import Modal from "./components/Modal";
 
 function App() {
   const [users, setUsers] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [userDetail, setUserDetail] = useState();
-  const [error,setIsError] = useState(false);
-  const [errorMsg,setErrorMsg] = useState('');
+  const [error, setIsError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const userDetailChangeHandler = (userData) => {
     setUserDetail(userData);
@@ -18,7 +18,7 @@ function App() {
 
   const modalChangeHandler = () => {
     setIsError(false);
-  }
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -44,8 +44,14 @@ function App() {
     <>
       <Header />
       {isLoading && <LoadingSpinnner />}
-      {error && <Modal  onClick={modalChangeHandler} message={errorMsg}  title="ERROR OCCURED !!"/>}
-      {!isLoading  && !error && (
+      {error && (
+        <Modal
+          onClick={modalChangeHandler}
+          message={errorMsg}
+          title="ERROR OCCURED !!"
+        />
+      )}
+      {!isLoading && !error && (
         <>
           {userDetail && (
             <>
@@ -58,19 +64,29 @@ function App() {
                       alt={userDetail.name.title}
                     />
                   </div>
-                  <div className="flex flex-col mt-10 sm:mt-20">
-                    <h1 className="text-center sm:text-4xl underline text-red-500 ">
+                  <div className="flex flex-col mt-6 sm:mt-20">
+                    <h1 className=" sm:text-4xl underline text-center sm:text-left text-red-500 ">
                       {userDetail.name.title} {userDetail.name.first}{" "}
                       {userDetail.name.last}
                     </h1>
-                    <p className="mt-2 text-sm  text-center sm:mt-4">
-                      {userDetail.location.street.number} ,{" "}
-                      {userDetail.location.street.name} ,{" "}
+                    <p className="mt-2 text-sm text-center sm:text-left    sm:mt-4">
+                      <span className="text-purple-600 font-semibold">
+                        {userDetail.location.street.number}
+                      </span>{" "}
+                      , {userDetail.location.street.name} ,{" "}
                       {userDetail.location.city} , {userDetail.location.state} ,{" "}
-                      {userDetail.location.country} , {userDetail.location.postcode}
+                      <span className="font-bold">
+                        {userDetail.location.country}
+                      </span>{" "}
+                      , {userDetail.location.postcode}
                     </p>
-                    <p className="mt-2 text-center text-sm sm:text-md">{userDetail.location.timezone.offset} , {userDetail.location.timezone.description}</p>
-                    <p className="mt-1 text-center text-sm sm:text-md">{userDetail.gender}</p>
+                    <p className="mt-2 text-smtext-center sm:text-left  sm:text-md">
+                      {userDetail.location.timezone.offset} ,{" "}
+                      {userDetail.location.timezone.description}
+                    </p>
+                    <p className="mt-1 text-sm text-center sm:text-left sm:text-md text-gray-500">
+                      {userDetail.gender}
+                    </p>
                   </div>
                 </div>
               </div>
