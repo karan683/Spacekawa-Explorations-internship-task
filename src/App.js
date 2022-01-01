@@ -55,7 +55,7 @@ function App() {
         <>
           {userDetail && (
             <>
-              <div className="px-6">
+              <div className="px-4">
                 <div className="max-w-3xl mx-auto rounded-lg shadow-md mt-16 h-72 border flex flex-col sm:flex-row items-center">
                   <div className="flex justify-center items-center w-64 mt-4">
                     <img
@@ -64,7 +64,7 @@ function App() {
                       alt={userDetail.name.title}
                     />
                   </div>
-                  <div className="flex flex-col mt-6 sm:mt-20">
+                  <div className="flex flex-col mt-6 sm:mt-0">
                     <h1 className=" sm:text-4xl underline text-center sm:text-left text-red-500 ">
                       {userDetail.name.title} {userDetail.name.first}{" "}
                       {userDetail.name.last}
@@ -80,7 +80,7 @@ function App() {
                       </span>{" "}
                       , {userDetail.location.postcode}
                     </p>
-                    <p className="mt-2 text-smtext-center sm:text-left  sm:text-md">
+                    <p className="mt-2 text-sm text-center sm:text-left  sm:text-md">
                       {userDetail.location.timezone.offset} ,{" "}
                       {userDetail.location.timezone.description}
                     </p>
