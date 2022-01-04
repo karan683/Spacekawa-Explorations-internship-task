@@ -32,21 +32,3 @@ const ErrorModal = ({onClick , message , title}) => {
 };
 
 export default ErrorModal;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
